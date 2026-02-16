@@ -22,7 +22,7 @@
 /* ===== Base Styles ===== */
 body {
   font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-  background-color: #42413C;
+  background-color: #6D8BC0;
   margin: 0;
   padding: 0;
   color: #000;
@@ -58,12 +58,12 @@ a img {
 
 /* ===== Links ===== */
 a:link {
-  color: #42413C;
+  color: #525AFF;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #6E6C64;
+  color: #4AB5B5;
   text-decoration: underline;
 }
 
@@ -71,6 +71,7 @@ a:hover,
 a:active,
 a:focus {
   text-decoration: none;
+  color: #525AFF;
 }
 
 /* ===== Layout Container ===== */
@@ -87,14 +88,18 @@ a:focus {
 .sidebar1 {
   float: left;
   width: 220px;
-  background-color: #EADCAE;
+  background-color: #8FD9FB;
   padding-bottom: 10px;
 }
 
 .sidebar-logo {
-  background-color: #C6D580;
-  padding: 10px 5px;
+  background-color: #4AB5B5;
+  padding: 20px 15px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
 }
 
 .sidebar-logo img {
@@ -106,7 +111,7 @@ a:focus {
 
 /* ===== Content Area ===== */
 .content {
-  padding: 10px 0;
+  padding: 0;
   width: 804px;
   float: left;
   background-color: #FFFFFF;
@@ -117,11 +122,51 @@ a:focus {
   padding: 0 15px 15px 40px;
 }
 
+.content section {
+  padding: 0 15px 15px 15px;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+  background-color: #4AB5B5;
+  padding: 20px 15px;
+  margin: 0 0 20px 0;
+  color: #fff;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.page-header p {
+  margin: 10px 0 0 0;
+  padding: 0;
+  color: #fff;
+}
+
+.page-header a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.page-header a:hover,
+.page-header a:focus {
+  color: #8FD9FB;
+  text-decoration: none;
+}
+
 /* ===== Aside ===== */
 aside {
   float: left;
   width: 220px;
-  background-color: #EADCAE;
+  background-color: #8FD9FB;
   padding: 10px 0;
 }
 
@@ -137,12 +182,12 @@ aside {
 /* ===== Navigation ===== */
 ul.nav {
   list-style: none;
-  border-top: 1px solid #666;
+  border-top: 1px solid #4AB5B5;
   margin-bottom: 15px;
 }
 
 ul.nav li {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #4AB5B5;
 }
 
 ul.nav a,
@@ -151,18 +196,19 @@ ul.nav a:visited {
   display: block;
   width: 200px;
   text-decoration: none;
-  background-color: #C6D580;
+  background-color: #8FD9FB;
+  color: #000;
 }
 
 ul.nav a:hover,
 ul.nav a:active,
 ul.nav a:focus {
-  background-color: #ADB96E;
+  background-color: #525AFF;
   color: #FFF;
 }
 
 ul.nav a.active {
-  background-color: #ADB96E;
+  background-color: #4AB5B5;
   color: #FFF;
   font-weight: bold;
 }
@@ -170,7 +216,7 @@ ul.nav a.active {
 /* ===== Footer ===== */
 footer {
   padding: 10px 0;
-  background-color: #CCC49F;
+  background-color: #8FD9FB;
   position: relative;
   clear: both;
 }
@@ -221,7 +267,7 @@ video {
   margin: 20px 0;
   padding: 15px;
   background-color: #f5f5f5;
-  border-left: 4px solid #ADB96E;
+  border-left: 4px solid #4AB5B5;
 }
 
 .info-box h3 {
@@ -258,6 +304,88 @@ video {
 
 .notice-box p:last-child {
   margin-bottom: 0;
+}
+
+/* ===== CaromStats Highlight Styling ===== */
+.caromstats-highlight {
+  background-color: #e3f5fb;
+  border-left: 4px solid #525AFF;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.caromstats-highlight h2 {
+  margin-top: 0;
+  color: #525AFF;
+}
+
+.caromstats-highlight h3 {
+  color: #4AB5B5;
+}
+
+.caromstats-highlight ul {
+  margin-bottom: 15px;
+}
+
+.caromstats-highlight .cta-link {
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+.caromstats-highlight .cta-link a {
+  color: #525AFF;
+  font-weight: bold;
+}
+
+.caromstats-highlight .intro-text {
+  font-size: 1.1em;
+}
+
+/* ===== Legacy Software Styling ===== */
+.legacy-heading {
+  font-size: 1.2em;
+}
+
+.legacy-note {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.legacy-box {
+  padding: 15px;
+  background-color: #f5f5f5;
+  margin: 15px 0;
+  border-left: 3px solid #6D8BC0;
+}
+
+.legacy-box h4 {
+  margin-top: 0;
+}
+
+.legacy-box h4:not(:first-child) {
+  margin-top: 10px;
+}
+
+.legacy-box p {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.legacy-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Utility Styling ===== */
+.icon-inline {
+  vertical-align: middle;
+}
+
+.text-large {
+  font-size: 1.1em;
+}
+
+.text-small {
+  font-size: 0.95em;
 }
 
 /* ===== Responsive Design ===== */
