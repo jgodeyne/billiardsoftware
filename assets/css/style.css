@@ -81,14 +81,7 @@ a:focus {
   margin: 0 auto;
 }
 
-/* ===== Header ===== */
-header {
-  background-color: #ADB96E;
-}
-
-header img {
-  padding: 5px;
-}
+/* ===== Header - REMOVED ===== */
 
 /* ===== Sidebar 1 (Navigation) ===== */
 .sidebar1 {
@@ -96,6 +89,19 @@ header img {
   width: 220px;
   background-color: #EADCAE;
   padding-bottom: 10px;
+}
+
+.sidebar-logo {
+  background-color: #C6D580;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.sidebar-logo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== Content Area ===== */

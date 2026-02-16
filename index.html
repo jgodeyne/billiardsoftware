@@ -76,16 +76,24 @@
       /* de lay-out wordt gecentreerd via de combinatie van de automatische waarde voor de zijkanten en de breedte */
     }
 
-    /* ~~ De koptekst heeft geen opgegeven breedte, maar krijgt de volledige breedte van uw lay-out. ~~ */
-    header {
-      background-color: #ADB96E;
-    }
-
     .sidebar1 {
       float: left;
       width: 220px;
       background-color: #EADCAE;
       padding-bottom: 10px;
+    }
+
+    .sidebar-logo {
+      background-color: #C6D580;
+      padding: 10px 5px;
+      text-align: center;
+    }
+
+    .sidebar-logo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
     }
 
     .content {
@@ -202,9 +210,10 @@
 <body>
   <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
   <div class="container">
-    <header role="banner"> <a href="index.html"><img src="images/BilliardSoftware.png" alt="BilliardSoftware Logo" width="210" id="Insert_logo" style="background-color: #C6D580; display:block;"
-        /></a> </header>
     <nav class="sidebar1" role="navigation" aria-label="Hoofdnavigatie">
+      <div class="sidebar-logo">
+        <a href="index.html"><img src="images/BilliardSoftware.png" alt="BilliardSoftware Logo" width="210"></a>
+      </div>
       <ul class="nav">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="nieuws.html">Laatste Nieuws</a></li>
