@@ -1,0 +1,276 @@
+/*
+ * BilliardSoftware Stylesheet
+ * Refactored: February 16, 2026
+ */
+
+/* ===== Accessibility ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== Base Styles ===== */
+body {
+  font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+  background-color: #42413C;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+/* ===== Reset ===== */
+ul,
+ol,
+dl {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+a img {
+  border: none;
+}
+
+/* ===== Links ===== */
+a:link {
+  color: #42413C;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #6E6C64;
+  text-decoration: underline;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+/* ===== Layout Container ===== */
+.container {
+  width: 1024px;
+  max-width: 100%;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #ADB96E;
+}
+
+header img {
+  padding: 5px;
+}
+
+/* ===== Sidebar 1 (Navigation) ===== */
+.sidebar1 {
+  float: left;
+  width: 220px;
+  background-color: #EADCAE;
+  padding-bottom: 10px;
+}
+
+/* ===== Content Area ===== */
+.content {
+  padding: 10px 0;
+  width: 804px;
+  float: left;
+  background-color: #FFFFFF;
+}
+
+.content ul,
+.content ol {
+  padding: 0 15px 15px 40px;
+}
+
+/* ===== Aside ===== */
+aside {
+  float: left;
+  width: 220px;
+  background-color: #EADCAE;
+  padding: 10px 0;
+}
+
+/* ===== Sidebar 2 - REMOVED ===== */
+.sidebar2 {
+  display: none;
+}
+
+.download-list {
+  padding-left: 25px;
+}
+
+/* ===== Navigation ===== */
+ul.nav {
+  list-style: none;
+  border-top: 1px solid #666;
+  margin-bottom: 15px;
+}
+
+ul.nav li {
+  border-bottom: 1px solid #666;
+}
+
+ul.nav a,
+ul.nav a:visited {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 200px;
+  text-decoration: none;
+  background-color: #C6D580;
+}
+
+ul.nav a:hover,
+ul.nav a:active,
+ul.nav a:focus {
+  background-color: #ADB96E;
+  color: #FFF;
+}
+
+ul.nav a.active {
+  background-color: #ADB96E;
+  color: #FFF;
+  font-weight: bold;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 10px 0;
+  background-color: #CCC49F;
+  position: relative;
+  clear: both;
+}
+
+/* ===== Utility Classes ===== */
+.fltrt {
+  float: right;
+  margin-left: 8px;
+}
+
+.fltlft {
+  float: left;
+  margin-right: 8px;
+}
+
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+}
+
+/* ===== Video Styling ===== */
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-container {
+  margin: 1rem 0;
+}
+
+.video-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== News Styling ===== */
+.news-date {
+  color: #6E6C64;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* ===== Info Box Styling ===== */
+.info-box {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-left: 4px solid #ADB96E;
+}
+
+.info-box h3 {
+  margin-top: 0;
+}
+
+.info-box h3:not(:first-child) {
+  margin-top: 15px;
+}
+
+/* ===== Notice Box Styling ===== */
+.notice-box {
+  margin: 20px 0;
+  padding: 15px 15px 15px 50px;
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-left: 4px solid #ff9800;
+  position: relative;
+}
+
+.notice-box::before {
+  content: "⚠";
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-size: 24px;
+  color: #ff9800;
+}
+
+.notice-box h3 {
+  margin-top: 0;
+  color: #856404;
+}
+
+.notice-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar1,
+  .content,
+  aside {
+    float: none;
+    width: 100%;
+  }
+  
+  ul.nav a,
+  ul.nav a:visited {
+    width: auto;
+  }
+}
