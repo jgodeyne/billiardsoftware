@@ -136,7 +136,6 @@ echo "Deploy finished."
 # Fix permissions on remote if requested
 if [[ $FIX_PERMS -eq 1 ]]; then
   echo "Fixing ownership and permissions on remote (requires sudo on ${REMOTE_HOST})..."
-  # When using SSH, the actual filesystem path is /volume1/docker/invoice/www
   REMOTE_SSH_PATH="/volume1${REMOTE_PATH}"
   if [[ $USE_SSHPASS -eq 1 ]]; then
     sshpass -p "$SSH_PASSWORD" ssh -p "${SSH_PORT}" "${REMOTE_USER}@${REMOTE_HOST}" \
