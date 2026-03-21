@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CaromStats - Moderne mobiele app voor iOS en Android om uw biljartresultaten en statistieken bij te houden. Gratis te downloaden.">
+  <meta name="description" content="CaromStats - Moderne mobiele app voor iOS en Android om je biljartresultaten en statistieken bij te houden. Gratis te downloaden.">
   <title>CaromStats - Mobiele App voor iOS en Android</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -22,8 +22,13 @@
         <li><a href="billiardadmin.html">BilliardAdmin</a></li>
         <li><a href="help.html">Hulp</a></li>
         <li><a href="videos.html">Video's</a></li>
-        <li><a href="contact.html">Contacteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="language-switch" aria-label="Language selector">
+        <a data-lang="nl" href="javascript:void(0)">NL</a>
+        <a data-lang="fr" href="javascript:void(0)">FR</a>
+        <a data-lang="en" href="javascript:void(0)">EN</a>
+      </div>
       <aside aria-label="Sponsor informatie">
         <h4>Sponsored by:</h4>
         <p><a href="http://www.lingo-translations.be" rel="noopener" target="_blank">Lingo bvba</a></p>
@@ -33,13 +38,33 @@
     <main class="content" id="main-content" role="main">
       <section>
         <div class="page-header">
+          <p class="hero-eyebrow">Voor spelers die vooruit willen</p>
           <h1>CaromStats - Mobiele App <img src="images/CaromStats.png" width="64" height="64" alt="CaromStats Icon" class="icon-inline"></h1>
-          <p><strong>CaromStats</strong> is een moderne <em>mobiele applicatie</em> voor iOS en Android waarmee u persoonlijk uw biljartresultaten en statistieken kunt bijhouden. Perfect voor spelers die hun prestaties willen analyseren en verbeteren.</p>
+          <p><strong>CaromStats</strong> is een moderne <em>mobiele app</em> voor iOS en Android waarmee je je biljartresultaten en statistieken bijhoudt. Ideaal als je je prestaties graag opvolgt en stap voor stap wilt verbeteren.</p>
+          <div class="hero-actions">
+            <a class="button-link button-link-primary" href="https://apps.apple.com/be/app/caromstats/id6759289626?l=nl" rel="noopener" target="_blank">Open in de App Store</a>
+            <a class="button-link button-link-secondary" href="contact.html">Vraag info</a>
+          </div>
+        </div>
+
+        <div class="stats-strip">
+          <div class="stat-card">
+            <strong>iOS + Android</strong>
+            <span>Beschikbaar op moderne smartphones en tablets.</span>
+          </div>
+          <div class="stat-card">
+            <strong>Offline eerst</strong>
+            <span>Je resultaten blijven bruikbaar, ook zonder verbinding.</span>
+          </div>
+          <div class="stat-card">
+            <strong>Cloudback-up</strong>
+            <span>Synchroniseer veilig tussen apparaten wanneer jij dat wilt.</span>
+          </div>
         </div>
         
         <div class="info-box caromstats-highlight">
           <h3>✨ Nieuw in 2026!</h3>
-          <p>CaromStats is de nieuwste toevoeging aan onze software suite. In tegenstelling tot BilliardScore en BilliardAdmin is dit een <strong>moderne mobiele app</strong> die actief wordt onderhouden en uitgebreid met nieuwe functies.</p>
+          <p>CaromStats is de nieuwste toevoeging aan onze software. In tegenstelling tot BilliardScore en BilliardAdmin is dit een <strong>moderne mobiele app</strong> die actief wordt onderhouden en geregeld nieuwe functies krijgt.</p>
         </div>
         
         <h2>Platforms</h2>
@@ -50,67 +75,73 @@
         
         <h2>Belangrijkste Functies</h2>
         
-        <h3>📊 Geavanceerde Statistieken</h3>
-        <ul>
-          <li>Huidig gemiddelde per discipline en per competitie</li>
-          <li>Hoogste carambole bijhouden</li>
-          <li>Gewonnen/verloren/gelijk wedstrijden</li>
-          <li>Totaal behaalde punten en beurten</li>
-          <li>Prestatie trends (stijgend/dalend/stabiel)</li>
-        </ul>
-        
-        <h3>📈 Visuele Grafieken</h3>
-        <ul>
-          <li>Gemiddelde evolutie (lijngrafiek)</li>
-          <li>Hoogste carambole evolutie (lijngrafiek)</li>
-          <li>Win/verlies ratio (cirkeldiagram)</li>
-          <li>Per seizoen of over alle seizoenen</li>
-        </ul>
-        
-        <h3>🎯 Slimme Organisatie</h3>
-        <ul>
-          <li>Multiple disciplines ondersteuning</li>
-          <li>Seizoen-gebaseerde tracking (zelf te definiëren startdatum)</li>
-          <li>Classificatieniveaus per discipline (min-max gemiddelde)</li>
-          <li>Dashboard met discipline- of competitieweergave</li>
-        </ul>
-        
-        <h3>☁️ Cloud Backup</h3>
-        <ul>
-          <li>Automatische backup naar Google Cloud Firestore</li>
-          <li>Inloggen met Google account</li>
-          <li>Data synchronisatie tussen apparaten</li>
-          <li>Conflict resolutie (meest recente gegevens winnen)</li>
-        </ul>
-        
-        <h3>📥 CSV Import</h3>
-        <ul>
-          <li>Importeer historische resultaten</li>
-          <li>Automatische datumformaat detectie</li>
-          <li>Validatie en foutafhandeling</li>
-          <li>Gedetailleerde feedback bij import</li>
-        </ul>
-        
-        <h3>🌐 Meertalig</h3>
-        <ul>
-          <li>Nederlands</li>
-          <li>Frans</li>
-          <li>Engels</li>
-        </ul>
-        
-        <h3>📴 Offline Werking</h3>
-        <ul>
-          <li>Volledige functionaliteit zonder internetverbinding</li>
-          <li>Data lokaal opgeslagen op uw apparaat</li>
-          <li>Privacy-vriendelijk</li>
-        </ul>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>📊 Geavanceerde Statistieken</h3>
+            <ul>
+              <li>Huidig gemiddelde per discipline en per competitie</li>
+              <li>Hoogste carambole bijhouden</li>
+              <li>Gewonnen/verloren/gelijk wedstrijden</li>
+              <li>Totaal behaalde punten en beurten</li>
+              <li>Prestatie trends (stijgend/dalend/stabiel)</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <h3>📈 Visuele Grafieken</h3>
+            <ul>
+              <li>Gemiddelde evolutie (lijngrafiek)</li>
+              <li>Hoogste carambole evolutie (lijngrafiek)</li>
+              <li>Win/verlies ratio (cirkeldiagram)</li>
+              <li>Per seizoen of over alle seizoenen</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <h3>🎯 Slimme Organisatie</h3>
+            <ul>
+              <li>Multiple disciplines ondersteuning</li>
+              <li>Seizoen-gebaseerde tracking (zelf te definiëren startdatum)</li>
+              <li>Classificatieniveaus per discipline (min-max gemiddelde)</li>
+              <li>Dashboard met discipline- of competitieweergave</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <h3>☁️ Cloud Backup</h3>
+            <ul>
+              <li>Automatische backup naar Google Cloud Firestore</li>
+              <li>Inloggen met je Google-account</li>
+              <li>Synchronisatie tussen je apparaten</li>
+              <li>Slimme conflictresolutie waarbij de recentste gegevens voorrang krijgen</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <h3>📥 CSV Import</h3>
+            <ul>
+              <li>Importeer historische resultaten</li>
+              <li>Automatische datumformaat detectie</li>
+              <li>Validatie en foutafhandeling</li>
+              <li>Gedetailleerde feedback bij import</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <h3>🌐 Meertalig & Offline</h3>
+            <ul>
+              <li>Nederlands, Frans en Engels</li>
+              <li>Volledige functionaliteit zonder internetverbinding</li>
+              <li>Data lokaal opgeslagen op je apparaat</li>
+              <li>Privacy-vriendelijk</li>
+            </ul>
+          </article>
+        </div>
         
         <h2>Downloads</h2>
-        <p><strong>Versie 1.0.0</strong> - Uitgebracht: 15 februari 2026</p>
-        <ul>
-          <li><strong>iOS:</strong> Binnenkort beschikbaar in de App Store</li>
-          <li><strong>Android:</strong> Binnenkort beschikbaar in de Google Play Store</li>
-        </ul>
+        <div class="download-panel">
+          <h3>Download CaromStats</h3>
+          <p><strong>Versie 1.0.0</strong> - Uitgebracht: 15 februari 2026</p>
+          <ul>
+            <li><strong>iOS:</strong> Nu beschikbaar in de <a href="https://apps.apple.com/be/app/caromstats/id6759289626?l=nl" rel="noopener" target="_blank">Apple App Store</a></li>
+            <li><strong>Android:</strong> Binnenkort beschikbaar in de Google Play Store</li>
+          </ul>
+        </div>
         
         <h2>Laatste Updates</h2>
         <p><em>16 februari 2026:</em></p>
@@ -130,23 +161,33 @@
         </ul>
         
         <h2>Ondersteuning</h2>
-        <p>Voor vragen of ondersteuning bij CaromStats, <a href="contact.html">neem contact op</a>.</p>
+        <p>Vragen over CaromStats of ergens op vastgelopen? <a href="contact.html">Laat het ons weten</a>.</p>
         
         <h2>Verschil met BilliardScore/Admin</h2>
-        <p>CaromStats is ontwikkeld voor <strong>individuele spelers</strong> die hun persoonlijke prestaties willen bijhouden. In tegenstelling tot BilliardScore en BilliardAdmin:</p>
+        <p>CaromStats is gemaakt voor <strong>individuele spelers</strong> die hun persoonlijke prestaties willen bijhouden. In vergelijking met BilliardScore en BilliardAdmin:</p>
         <ul>
           <li>✅ <strong>Moderne mobiele app</strong> in plaats van desktop software</li>
           <li>✅ <strong>Actief onderhouden</strong> met regelmatige updates</li>
           <li>✅ <strong>iOS en Android</strong> in plaats van alleen Windows</li>
-          <li>✅ <strong>Cloud backup</strong> en synchronisatie</li>
+          <li>✅ <strong>Cloudback-up</strong> en synchronisatie</li>
           <li>✅ <strong>Persoonlijk gebruik</strong> in plaats van clubbeheer</li>
         </ul>
+
+        <div class="cta-panel">
+          <h3>Klaar om je resultaten slimmer bij te houden?</h3>
+          <p>Start met CaromStats op iPhone of iPad, of neem contact op als je meer wilt weten over de app.</p>
+          <div class="hero-actions">
+            <a class="button-link button-link-primary" href="https://apps.apple.com/be/app/caromstats/id6759289626?l=nl" rel="noopener" target="_blank">Download voor iOS</a>
+            <a class="button-link button-link-secondary" href="contact.html">Stel een vraag</a>
+          </div>
+        </div>
       </section>
       <!-- end .content -->
     </main>
     <footer></footer>
     <!-- end .container -->
   </div>
+  <script src="assets/js/lang-switch.js"></script>
 </body>
 
 </html>

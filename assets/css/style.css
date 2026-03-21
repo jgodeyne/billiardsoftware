@@ -1,43 +1,84 @@
 /*
  * BilliardSoftware Stylesheet
- * Refactored: February 16, 2026
+ * Visual redesign: March 2026
  */
+
+:root {
+  --felt-950: #072d22;
+  --felt-900: #0c3d30;
+  --felt-800: #125340;
+  --felt-700: #1a6f55;
+  --felt-500: #2aa37d;
+  --sky-100: #ecf8ff;
+  --sky-200: #d8f1ff;
+  --gold-500: #c79d41;
+  --gold-400: #dfba67;
+  --ink-900: #13231d;
+  --ink-700: #385149;
+  --ink-500: #5f766f;
+  --cream-50: #fcfaf4;
+  --cream-100: #f6f1e7;
+  --white: #ffffff;
+  --line-soft: rgba(14, 55, 44, 0.12);
+  --shadow-lg: 0 24px 60px rgba(5, 24, 19, 0.18);
+  --shadow-md: 0 18px 40px rgba(10, 32, 25, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
 
 /* ===== Accessibility ===== */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px;
+  top: -48px;
+  left: 16px;
+  background: var(--ink-900);
+  color: var(--white);
+  padding: 10px 14px;
+  border-radius: 999px;
   text-decoration: none;
-  z-index: 100;
+  z-index: 200;
 }
 
 .skip-link:focus {
-  top: 0;
+  top: 16px;
 }
 
-/* ===== Base Styles ===== */
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-  background-color: #6D8BC0;
   margin: 0;
-  padding: 0;
-  color: #000;
+  padding: 12px;
+  color: var(--ink-900);
+  font: 400 16px/1.7 "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(223, 186, 103, 0.28), transparent 26%),
+    radial-gradient(circle at right 10% top 20%, rgba(42, 163, 125, 0.16), transparent 22%),
+    linear-gradient(135deg, #0a3528 0%, #114738 45%, #0f2f25 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.45;
 }
 
 /* ===== Reset ===== */
 ul,
 ol,
 dl {
-  padding: 0;
   margin: 0;
-}
-
-ul {
-  list-style-position: inside;
+  padding: 0;
 }
 
 h1,
@@ -47,181 +88,696 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
-  padding-right: 15px;
-  padding-left: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 a img {
   border: none;
 }
 
-/* ===== Links ===== */
-a:link {
-  color: #525AFF;
-  text-decoration: underline;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
+/* ===== Links ===== */
+a:link,
 a:visited {
-  color: #4AB5B5;
+  color: var(--felt-800);
   text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
 }
 
 a:hover,
 a:active,
 a:focus {
+  color: var(--felt-500);
   text-decoration: none;
-  color: #525AFF;
 }
 
-/* ===== Layout Container ===== */
+/* ===== Layout ===== */
 .container {
-  width: 1024px;
-  max-width: 100%;
-  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  width: min(1320px, 100%);
   margin: 0 auto;
+  padding: 16px;
+  background: rgba(252, 250, 244, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 34px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
 }
 
-/* ===== Header - REMOVED ===== */
-
-/* ===== Sidebar 1 (Navigation) ===== */
+/* ===== Sidebar ===== */
 .sidebar1 {
-  float: left;
-  width: 220px;
-  background-color: #8FD9FB;
-  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-self: start;
+  padding: 18px;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(15, 76, 59, 0.95) 0%, rgba(7, 45, 34, 0.98) 100%);
+  color: var(--white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), var(--shadow-md);
+  position: sticky;
+  top: 24px;
 }
 
 .sidebar-logo {
-  background-color: #4AB5B5;
-  padding: 20px 15px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 55%),
+    linear-gradient(135deg, rgba(199, 157, 65, 0.26), rgba(42, 163, 125, 0.18));
   text-align: center;
-  display: flex;
-  align-items: center;
+}
+
+.sidebar-logo a {
+  display: inline-flex;
   justify-content: center;
-  min-height: 80px;
+  width: 100%;
 }
 
 .sidebar-logo img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.18));
 }
 
-/* ===== Content Area ===== */
+aside {
+  width: auto;
+  float: none;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+aside h4,
+aside p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+aside h4 {
+  margin-bottom: 6px;
+  font: 700 0.78rem/1.2 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+aside a:link,
+aside a:visited {
+  color: var(--gold-400);
+}
+
+/* ===== Navigation ===== */
+ul.nav {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+ul.nav li {
+  border: 0;
+}
+
+ul.nav a,
+ul.nav a:visited {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  width: auto;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font: 700 0.96rem/1.2 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.01em;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+ul.nav a:hover,
+ul.nav a:active,
+ul.nav a:focus {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  transform: translateX(3px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+ul.nav a.active {
+  background: linear-gradient(135deg, var(--gold-500), #e5c779);
+  color: #162217;
+  box-shadow: 0 10px 24px rgba(199, 157, 65, 0.28);
+}
+
+.language-switch {
+  display: flex;
+  gap: 10px;
+  padding: 4px 0 2px;
+  align-items: center;
+}
+
+.language-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font: 700 0.8rem/1 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.language-switch a.active,
+.language-switch a:hover,
+.language-switch a:focus {
+  background: var(--white);
+  color: var(--felt-900);
+  border-color: transparent;
+}
+
+/* ===== Content ===== */
 .content {
+  width: auto;
+  float: none;
+  min-width: 0;
+  background: transparent;
+  padding: 8px 10px 12px;
+}
+
+.content section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   padding: 0;
-  width: 804px;
-  float: left;
-  background-color: #FFFFFF;
+}
+
+.content p,
+.content li,
+.content dd,
+.content dt {
+  color: var(--ink-700);
+}
+
+.content p + p {
+  margin-top: 10px;
 }
 
 .content ul,
 .content ol {
-  padding: 0 15px 15px 40px;
+  padding-left: 1.35rem;
 }
 
-.content section {
-  padding: 0 15px 15px 15px;
+.content li + li {
+  margin-top: 0.5rem;
+}
+
+.content section > h2 {
+  position: relative;
+  padding-top: 10px;
+  margin-top: 6px;
+  font: 800 clamp(1.45rem, 1.1rem + 1vw, 2rem)/1.15 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--felt-900);
+}
+
+.content section > h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold-500), var(--felt-500));
+}
+
+.content section > h3,
+.content section h3 {
+  font: 800 1.15rem/1.25 "Avenir Next", "Trebuchet MS", sans-serif;
+  color: var(--felt-900);
+}
+
+.content section h4 {
+  font: 800 1rem/1.3 "Avenir Next", "Trebuchet MS", sans-serif;
+  color: var(--ink-900);
 }
 
 /* ===== Page Header ===== */
 .page-header {
-  background-color: #4AB5B5;
-  padding: 20px 15px;
-  margin: 0 0 20px 0;
-  color: #fff;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 30px clamp(22px, 4vw, 38px);
+  margin: 0;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top right, rgba(223, 186, 103, 0.32), transparent 30%),
+    linear-gradient(135deg, #153f30 0%, #0f6f55 48%, #1a5d99 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.page-header::before,
+.page-header::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page-header::before {
+  width: 180px;
+  height: 180px;
+  right: -40px;
+  top: -60px;
+}
+
+.page-header::after {
+  width: 90px;
+  height: 90px;
+  right: 90px;
+  bottom: -32px;
 }
 
 .page-header h1 {
-  margin: 0;
-  padding: 0;
-  color: #fff;
+  position: relative;
+  z-index: 1;
+  font: 800 clamp(2rem, 1.55rem + 1.6vw, 3.2rem)/1.05 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: -0.03em;
+  color: var(--white);
 }
 
 .page-header p {
-  margin: 10px 0 0 0;
-  padding: 0;
-  color: #fff;
+  position: relative;
+  z-index: 1;
+  max-width: 60ch;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.02rem;
 }
 
 .page-header a {
-  color: #fff;
-  text-decoration: underline;
-  font-weight: bold;
+  color: var(--white);
+  text-decoration-color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
 }
 
 .page-header a:hover,
 .page-header a:focus {
-  color: #8FD9FB;
+  color: var(--cream-100);
+}
+
+.hero-eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.94);
+  font: 800 0.75rem/1 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.button-link,
+.button-link:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font: 800 0.92rem/1 "Avenir Next", "Trebuchet MS", sans-serif;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.button-link:hover,
+.button-link:focus {
+  transform: translateY(-1px);
+}
+
+.button-link-primary,
+.button-link-primary:visited {
+  background: var(--white);
+  color: var(--felt-900);
+  box-shadow: 0 14px 30px rgba(6, 19, 15, 0.2);
+}
+
+.button-link-primary:hover,
+.button-link-primary:focus {
+  background: var(--gold-400);
+  color: #1c2414;
+}
+
+.button-link-secondary,
+.button-link-secondary:visited {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.button-link-secondary:hover,
+.button-link-secondary:focus {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+}
+
+.page-header .button-link-primary,
+.page-header .button-link-primary:visited,
+.page-header .button-link-primary:hover,
+.page-header .button-link-primary:focus {
+  color: var(--felt-900);
   text-decoration: none;
 }
 
-/* ===== Aside ===== */
-aside {
-  float: left;
-  width: 220px;
-  background-color: #8FD9FB;
-  padding: 10px 0;
+.page-header .button-link-secondary,
+.page-header .button-link-secondary:visited,
+.page-header .button-link-secondary:hover,
+.page-header .button-link-secondary:focus {
+  color: var(--white);
+  text-decoration: none;
 }
 
-/* ===== Sidebar 2 - REMOVED ===== */
-.sidebar2 {
-  display: none;
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 18px 18px 16px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--felt-900);
+  font: 800 1.1rem/1.1 "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+.stat-card span {
+  color: var(--ink-700);
+  font-size: 0.95rem;
+}
+
+/* ===== Boxes ===== */
+.info-box,
+.legacy-box,
+.notice-box,
+.video-container,
+.content section > ul,
+.content section > ol {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.info-box,
+.legacy-box,
+.notice-box,
+.video-container {
+  padding: 24px clamp(20px, 3vw, 30px);
+}
+
+.info-box {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(236, 248, 255, 0.92));
+  border: 1px solid rgba(26, 111, 85, 0.1);
+}
+
+.info-box h3:not(:first-child) {
+  margin-top: 18px;
+}
+
+.caromstats-highlight {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(223, 186, 103, 0.22), transparent 24%),
+    linear-gradient(135deg, rgba(7, 45, 34, 0.98), rgba(17, 79, 61, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
+}
+
+.caromstats-highlight::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.caromstats-highlight h2,
+.caromstats-highlight h3,
+.caromstats-highlight p,
+.caromstats-highlight li {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.caromstats-highlight h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.caromstats-highlight h3 {
+  color: var(--gold-400);
+}
+
+.caromstats-highlight .intro-text {
+  font-size: 1.05rem;
+}
+
+.caromstats-highlight .cta-link {
+  margin-top: 10px;
+}
+
+.caromstats-highlight .cta-link a,
+.caromstats-highlight .cta-link a:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--felt-900);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.caromstats-highlight .cta-link a:hover,
+.caromstats-highlight .cta-link a:focus {
+  background: var(--gold-400);
+  color: #162217;
+}
+
+.legacy-heading {
+  color: var(--ink-900);
+}
+
+.legacy-note {
+  color: var(--ink-500);
+}
+
+.legacy-box {
+  background: linear-gradient(180deg, rgba(244, 239, 231, 0.95), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(19, 35, 29, 0.08);
+  border-left: 0;
+  position: relative;
+}
+
+.legacy-box::before {
+  content: "Legacy";
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(19, 35, 29, 0.08);
+  color: var(--ink-700);
+  font: 700 0.74rem/1 "Avenir Next", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legacy-box h4:not(:first-child) {
+  margin-top: 18px;
+}
+
+.legacy-box p {
+  margin-top: 8px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+}
+
+.feature-card ul,
+.feature-card ol {
+  padding-left: 1.2rem;
+}
+
+.download-panel,
+.cta-panel {
+  padding: 24px clamp(20px, 3vw, 30px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.download-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(236, 248, 255, 0.92));
+  border: 1px solid rgba(17, 79, 61, 0.1);
+}
+
+.download-panel h3,
+.cta-panel h3 {
+  margin-bottom: 10px;
+}
+
+.download-panel ul,
+.cta-panel ul {
+  margin-top: 12px;
+  padding-left: 1.2rem;
+}
+
+.cta-panel {
+  background: linear-gradient(135deg, rgba(12, 61, 48, 0.96), rgba(18, 83, 64, 0.94));
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-panel p,
+.cta-panel li,
+.cta-panel h3 {
+  color: var(--white);
+}
+
+.cta-panel .hero-actions {
+  margin-top: 16px;
+}
+
+.notice-box {
+  position: relative;
+  padding-left: 76px;
+  background: linear-gradient(180deg, #fff8e7, #fff3ce);
+  border: 1px solid rgba(199, 157, 65, 0.28);
+}
+
+.notice-box::before {
+  content: "!";
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+  color: #2d2108;
+  font: 900 1.15rem/1 "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+.notice-box h3 {
+  color: #725312;
+  margin-bottom: 8px;
+}
+
+/* ===== Lists and cards ===== */
+.content section > ul,
+.content section > ol {
+  padding: 22px 24px 22px 44px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line-soft);
+}
+
+.content section > ul li::marker,
+.content section > ol li::marker {
+  color: var(--felt-700);
 }
 
 .download-list {
   padding-left: 25px;
 }
 
-/* ===== Navigation ===== */
-ul.nav {
-  list-style: none;
-  border-top: 1px solid #4AB5B5;
-  margin-bottom: 15px;
-}
-
-ul.nav li {
-  border-bottom: 1px solid #4AB5B5;
-}
-
-ul.nav a,
-ul.nav a:visited {
-  padding: 5px 5px 5px 15px;
+/* ===== Video ===== */
+video {
   display: block;
-  width: 200px;
-  text-decoration: none;
-  background-color: #8FD9FB;
-  color: #000;
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: var(--radius-md);
+  background: #0d1f19;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-ul.nav a:hover,
-ul.nav a:active,
-ul.nav a:focus {
-  background-color: #525AFF;
-  color: #FFF;
+.video-container {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line-soft);
 }
 
-ul.nav a.active {
-  background-color: #4AB5B5;
-  color: #FFF;
-  font-weight: bold;
+.video-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 /* ===== Footer ===== */
 footer {
-  padding: 10px 0;
-  background-color: #8FD9FB;
-  position: relative;
+  min-height: 10px;
+  margin-top: 8px;
   clear: both;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(17, 79, 61, 0.25), rgba(199, 157, 65, 0.22));
 }
 
-/* ===== Utility Classes ===== */
+/* ===== Utilities ===== */
 .fltrt {
   float: right;
   margin-left: 8px;
@@ -236,148 +792,12 @@ footer {
   clear: both;
   height: 0;
   font-size: 1px;
-  line-height: 0px;
+  line-height: 0;
 }
 
-/* ===== Video Styling ===== */
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.video-container {
-  margin: 1rem 0;
-}
-
-.video-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-/* ===== News Styling ===== */
-.news-date {
-  color: #6E6C64;
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-/* ===== Info Box Styling ===== */
-.info-box {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-left: 4px solid #4AB5B5;
-}
-
-.info-box h3 {
-  margin-top: 0;
-}
-
-.info-box h3:not(:first-child) {
-  margin-top: 15px;
-}
-
-/* ===== Notice Box Styling ===== */
-.notice-box {
-  margin: 20px 0;
-  padding: 15px 15px 15px 50px;
-  background-color: #fff3cd;
-  border: 1px solid #ffc107;
-  border-left: 4px solid #ff9800;
-  position: relative;
-}
-
-.notice-box::before {
-  content: "⚠";
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  font-size: 24px;
-  color: #ff9800;
-}
-
-.notice-box h3 {
-  margin-top: 0;
-  color: #856404;
-}
-
-.notice-box p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===== CaromStats Highlight Styling ===== */
-.caromstats-highlight {
-  background-color: #e3f5fb;
-  border-left: 4px solid #525AFF;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.caromstats-highlight h2 {
-  margin-top: 0;
-  color: #525AFF;
-}
-
-.caromstats-highlight h3 {
-  color: #4AB5B5;
-}
-
-.caromstats-highlight ul {
-  margin-bottom: 15px;
-}
-
-.caromstats-highlight .cta-link {
-  font-size: 1.1em;
-  margin-bottom: 0;
-}
-
-.caromstats-highlight .cta-link a {
-  color: #525AFF;
-  font-weight: bold;
-}
-
-.caromstats-highlight .intro-text {
-  font-size: 1.1em;
-}
-
-/* ===== Legacy Software Styling ===== */
-.legacy-heading {
-  font-size: 1.2em;
-}
-
-.legacy-note {
-  color: #666;
-  font-size: 0.95em;
-}
-
-.legacy-box {
-  padding: 15px;
-  background-color: #f5f5f5;
-  margin: 15px 0;
-  border-left: 3px solid #6D8BC0;
-}
-
-.legacy-box h4 {
-  margin-top: 0;
-}
-
-.legacy-box h4:not(:first-child) {
-  margin-top: 10px;
-}
-
-.legacy-box p {
-  font-size: 0.95em;
-  margin-bottom: 10px;
-}
-
-.legacy-box p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===== Utility Styling ===== */
 .icon-inline {
   vertical-align: middle;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
 }
 
 .text-large {
@@ -388,23 +808,87 @@ video {
   font-size: 0.95em;
 }
 
-/* ===== Responsive Design ===== */
-@media screen and (max-width: 1024px) {
+.news-date {
+  color: var(--ink-500);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 1100px) {
+  body {
+    padding: 10px;
+  }
+
   .container {
-    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .sidebar1 {
+    position: static;
   }
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    gap: 14px;
+    padding: 14px;
+    border-radius: 0;
+    width: 100%;
+  }
+
   .sidebar1,
   .content,
   aside {
+    width: auto;
     float: none;
-    width: 100%;
   }
-  
+
+  .content section {
+    padding: 0;
+  }
+
+  .content {
+    padding: 4px 2px 8px;
+  }
+
+  ul.nav {
+    gap: 6px;
+  }
+
   ul.nav a,
   ul.nav a:visited {
     width: auto;
+    min-height: 44px;
+  }
+
+  .page-header,
+  .info-box,
+  .legacy-box,
+  .notice-box,
+  .video-container,
+  .content section > ul,
+  .content section > ol {
+    border-radius: 18px;
+  }
+
+  .stats-strip,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notice-box {
+    padding-left: 24px;
+    padding-top: 70px;
+  }
+
+  .notice-box::before {
+    top: 20px;
+    left: 20px;
   }
 }
