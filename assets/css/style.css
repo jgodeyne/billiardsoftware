@@ -450,6 +450,11 @@ ul.nav a.active {
   box-shadow: 0 14px 30px rgba(6, 19, 15, 0.2);
 }
 
+.button-link.button-link-primary,
+.button-link.button-link-primary:visited {
+  color: var(--felt-900);
+}
+
 .button-link-primary:hover,
 .button-link-primary:focus {
   background: var(--gold-400);
@@ -461,6 +466,11 @@ ul.nav a.active {
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.button-link.button-link-secondary,
+.button-link.button-link-secondary:visited {
+  color: var(--white);
 }
 
 .button-link-secondary:hover,
@@ -695,6 +705,10 @@ ul.nav a.active {
 .cta-panel p,
 .cta-panel li,
 .cta-panel h3 {
+  color: var(--white);
+}
+
+.content section .cta-panel h3 {
   color: var(--white);
 }
 
